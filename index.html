@@ -946,7 +946,7 @@
       return "";
     }
 
-    function buildPayload(form){
+    function buildPayload(form, metaEventId){
       const payload = new URLSearchParams();
 
       const name = getValue(form, [
@@ -987,11 +987,13 @@
 
       payload.append("consent_text", CONSENT_TEXT);
       payload.append("user_agent", navigator.userAgent);
+      payload.append("meta_event_id", metaEventId);
+      payload.append("meta_test_event_code", "TEST74452");
 
       return payload;
     }
 
-    function showMessage(form){
+    function showMessage(form, metaEventId){
       const msg = form.querySelector(".form-message");
 
       if(msg){
@@ -1002,13 +1004,16 @@
       openPopup("thankPopup");
 
       if(typeof fbq === "function"){
-        fbq("track", "CompleteRegistration");
+        fbq("track", "CompleteRegistration", {}, {
+          eventID: metaEventId
+        });
       }
     }
 
     async function submitLead(form){
       const button = form.querySelector('button[type="submit"],input[type="submit"]');
       const oldText = button ? (button.textContent || button.value || "Registrera dig") : "Registrera dig";
+      const metaEventId = "lead_" + Date.now() + "_" + Math.floor(Math.random() * 1000000);
 
       const name = getValue(form, [
         'input[name="name"]',
@@ -1043,12 +1048,12 @@
           headers: {
             "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
           },
-          body: buildPayload(form).toString()
+          body: buildPayload(form, metaEventId).toString()
         });
 
         console.log("Brain Trade lead submitted:", form.getAttribute("data-form-source") || "Website Form");
 
-        showMessage(form);
+        showMessage(form, metaEventId);
         form.reset();
 
         const phoneField = form.querySelector('input[name="phone"]');
