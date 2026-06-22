@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brain Trade</title>
+  <meta name="description" content="Brain Trade registration page for SpaceX market learning and executive follow-up.">
+  <style>
+    :root{
+      --bg:#f6f9ff;
+      --card:#ffffff;
+      --ink:#101828;
+      --muted:#667085;
+      --line:#e6ebf3;
+      --blue:#175cff;
+      --blue2:#0b45d9;
+      --green:#13b981;
+      --soft-blue:#edf4ff;
+      --shadow:0 24px 70px rgba(16,24,40,.12);
+      --radius:28px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--ink);
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Arial,sans-serif;
+      background:
+        radial-gradient(circle at 15% 8%,rgba(23,92,255,.14),transparent 28%),
+        radial-gradient(circle at 88% 18%,rgba(19,185,129,.13),transparent 32%),
+        linear-gradient(180deg,#ffffff 0%,var(--bg) 38%,#ffffff 100%);
+      overflow-x:hidden;
+    }
+    body:before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:-1;
+      background:
+        linear-gradient(110deg,transparent 0 16%,rgba(23,92,255,.06) 16.2% 16.4%,transparent 16.6% 100%),
+        linear-gradient(152deg,transparent 0 63%,rgba(19,185,129,.08) 63.1% 63.3%,transparent 63.5% 100%);
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1160px,92vw);margin:0 auto}
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(255,255,255,.82);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(230,235,243,.85);
+    }
+    .nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;font-size:23px;font-weight:600;letter-spacing:-.035em}
+    .brand-mark{
+      width:38px;height:38px;border-radius:14px;
+      background:linear-gradient(135deg,var(--blue),var(--green));
+      position:relative;box-shadow:0 12px 28px rgba(23,92,255,.18)
+    }
+    .brand-mark:after{content:"";position:absolute;inset:9px;border:2px solid #fff;border-left:0;border-bottom:0;border-radius:4px;transform:rotate(45deg)}
+    .links{display:flex;align-items:center;gap:26px;color:#344054;font-size:14px;font-weight:500}
+    .nav-cta{display:flex;align-items:center;gap:12px}
+    .btn{
+      border:0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:9px;
+      min-height:48px;padding:0 22px;border-radius:999px;
+      background:var(--blue);color:#fff;font-size:15px;font-weight:600;
+      box-shadow:0 16px 36px rgba(23,92,255,.24);
+      transition:.2s ease;
+    }
+    .btn:hover{transform:translateY(-1px);background:var(--blue2)}
+    .btn.secondary{background:#fff;color:#0f172a;border:1px solid var(--line);box-shadow:none}
+    .btn.full{width:100%}
+    .hero{padding:76px 0 54px}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:42px;align-items:center}
+    .badge{display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 13px;color:#344054;font-size:13px;font-weight:500;box-shadow:0 8px 25px rgba(16,24,40,.05)}
+    .dot{width:8px;height:8px;border-radius:999px;background:var(--green);box-shadow:0 0 0 7px rgba(19,185,129,.12)}
+    h1{font-size:clamp(42px,6vw,72px);line-height:1.02;letter-spacing:-.065em;margin:24px 0 18px;font-weight:500;color:#07142e}
+    .blue-text{color:var(--blue)}
+    .lead{font-size:clamp(17px,1.8vw,20px);line-height:1.7;color:#475467;max-width:700px;margin:0}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}
+    .stat{background:rgba(255,255,255,.75);border:1px solid var(--line);border-radius:22px;padding:18px}
+    .stat b{display:block;font-size:24px;font-weight:600;letter-spacing:-.04em;color:#0f172a}
+    .stat span{font-size:13px;color:#667085;line-height:1.35}
+    .card{background:rgba(255,255,255,.92);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .form-card{padding:28px}
+    .form-card h2{margin:0 0 8px;font-size:28px;line-height:1.2;letter-spacing:-.04em;font-weight:500;color:#07142e}
+    .form-card p{margin:0 0 20px;color:#667085;line-height:1.55;font-size:15px}
+    form{display:grid;gap:13px}
+    .field{display:grid;gap:7px}
+    label{font-size:13px;color:#344054;font-weight:500}
+    input,select{
+      width:100%;min-height:50px;border:1px solid #d9e1ef;border-radius:15px;background:#fff;color:#0f172a;
+      padding:12px 14px;font-size:15px;outline:none;transition:.18s ease;
+    }
+    input:focus,select:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(23,92,255,.09)}
+    .fine{font-size:12px;line-height:1.55;color:#667085;margin:2px 0 0}
+    .form-message{display:none;padding:12px 14px;border-radius:14px;background:#ecfdf5;color:#067647;font-size:14px}
+    .section{padding:72px 0}
+    .section-title{max-width:760px;margin-bottom:28px}
+    .eyebrow{color:var(--blue);font-weight:600;font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+    h2{font-size:clamp(32px,4vw,48px);line-height:1.08;letter-spacing:-.055em;font-weight:500;margin:0;color:#07142e}
+    .section-title p{font-size:17px;line-height:1.65;color:#667085;margin:14px 0 0}
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .feature{padding:24px;min-height:210px}
+    .icon{width:46px;height:46px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:var(--soft-blue);color:var(--blue);font-weight:700;margin-bottom:18px}
+    .feature h3{font-size:20px;line-height:1.25;letter-spacing:-.025em;font-weight:500;margin:0 0 10px;color:#101828}
+    .feature p{margin:0;color:#667085;line-height:1.62;font-size:15px}
+    .split{display:grid;grid-template-columns:.95fr 1.05fr;gap:22px;align-items:stretch}
+    .panel{padding:28px}
+    .list{display:grid;gap:13px;margin-top:22px}
+    .item{display:flex;gap:11px;color:#475467;line-height:1.55;font-size:15px}
+    .check{flex:0 0 22px;width:22px;height:22px;border-radius:999px;background:#e8fbf4;color:#079455;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700}
+    .graph-card{padding:22px;overflow:hidden}
+    .graph-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px}
+    .graph-head h3{margin:0;font-size:22px;font-weight:500;letter-spacing:-.035em}
+    #chartBox{height:430px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(135deg,#f8fbff,#edf4ff);display:flex;align-items:center;justify-content:center;color:#667085;text-align:center;padding:22px;overflow:hidden}
+    #tradingview-chart{width:100%;height:100%}
+    .faq{display:grid;gap:12px}
+    details{background:#fff;border:1px solid var(--line);border-radius:20px;padding:19px 20px;box-shadow:0 10px 28px rgba(16,24,40,.04)}
+    summary{cursor:pointer;font-weight:500;color:#101828}
+    details p{margin:12px 0 0;color:#667085;line-height:1.6}
+    footer{border-top:1px solid var(--line);padding:34px 0;color:#667085;font-size:13px;background:#fff}
+    .popup{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(15,23,42,.62);backdrop-filter:blur(10px)}
+    .popup.open{display:flex}
+    .popup-card{width:min(470px,94vw);position:relative;background:#fff;border-radius:30px;box-shadow:0 34px 100px rgba(0,0,0,.24);padding:28px;border:1px solid rgba(255,255,255,.5)}
+    .close{position:absolute;top:13px;right:15px;border:0;background:#f2f6fb;border-radius:999px;width:34px;height:34px;cursor:pointer;font-size:21px;color:#475467}
+    .thank-card{text-align:center;padding:38px 30px}
+    .thank-icon{width:58px;height:58px;border-radius:22px;background:linear-gradient(135deg,var(--blue),var(--green));margin:0 auto 18px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:28px}
+    .mobile-bar{display:none;position:fixed;z-index:60;left:14px;right:14px;bottom:14px}
+    @media(max-width:900px){
+      .links{display:none}.nav-inner{height:68px}.brand{font-size:21px}.hero{padding:46px 0 36px}.hero-grid,.split{grid-template-columns:1fr}.stats,.grid3{grid-template-columns:1fr}.mobile-bar{display:block}.nav-cta{display:none}.form-card{padding:22px}#chartBox{height:360px}h1{font-size:44px}
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top"><span class="brand-mark"></span><span>Brain Trade</span></a>
+      <div class="links">
+        <a href="#learning">Learning</a>
+        <a href="#live-graph">Live Graph</a>
+        <a href="#faq">FAQ</a>
+        <a href="#register">Register</a>
+      </div>
+      <div class="nav-cta"><a class="btn" href="#register">Register</a></div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <header class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="badge"><span class="dot"></span> SpaceX market learning and registration</div>
+          <h1>Register your interest in <span class="blue-text">SpaceX market opportunities.</span></h1>
+          <p class="lead">Brain Trade provides a clear learning experience for people interested in SpaceX-related market updates, investment themes, and a direct executive follow-up.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#register">Register</a>
+            <a class="btn secondary" href="#learning">Start Learning</a>
+          </div>
+          <div class="stats">
+            <div class="stat"><b>Simple</b><span>Register with name, email, and phone.</span></div>
+            <div class="stat"><b>Clear</b><span>Learn before making any decision.</span></div>
+            <div class="stat"><b>Fast</b><span>An executive will reach out shortly.</span></div>
+          </div>
+        </div>
+
+        <div class="card form-card" id="register">
+          <h2>Register with Brain Trade</h2>
+          <p>Complete the form below and our executive will contact you shortly.</p>
+          <form class="lead-form" data-form-source="Main Registration Form">
+            <div class="field">
+              <label for="main_name">Name</label>
+              <input id="main_name" name="name" type="text" placeholder="Your name" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="main_email">Email</label>
+              <input id="main_email" name="email" type="email" placeholder="you@email.com" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="main_phone">Phone</label>
+              <input id="main_phone" name="phone" type="tel" placeholder="Your phone number" autocomplete="tel" required>
+            </div>
+            <div class="field">
+              <label for="main_profile">Investor Profile</label>
+              <select id="main_profile" name="investor_profile">
+                <option value="Beginner" selected>Beginner</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Advanced">Advanced</option>
+              </select>
+            </div>
+            <p class="fine">Your contact information will be used by Brain Trade to contact you regarding your enquiry and registration.</p>
+            <div class="form-message">Thank you. Your information has been received.</div>
+            <button class="btn full" type="submit">Register</button>
+          </form>
+        </div>
+      </div>
+    </header>
+
+    <section class="section" id="learning">
+      <div class="wrap">
+        <div class="section-title">
+          <div class="eyebrow">Learning</div>
+          <h2>A premium learning path for SpaceX market interest.</h2>
+          <p>Understand the theme, follow market updates, and speak with Brain Trade before taking your next step.</p>
+        </div>
+        <div class="grid3">
+          <div class="card feature"><div class="icon">01</div><h3>Market overview</h3><p>Get a clear view of the SpaceX-related market conversation and why investors are paying attention.</p></div>
+          <div class="card feature"><div class="icon">02</div><h3>Risk awareness</h3><p>Review important risk points and avoid hype-driven decisions before moving ahead.</p></div>
+          <div class="card feature"><div class="icon">03</div><h3>Executive follow-up</h3><p>After registration, one of our executives will contact you to discuss your enquiry.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="live-graph">
+      <div class="wrap">
+        <div class="card graph-card">
+          <div class="graph-head">
+            <h3>SpaceX Market Graph</h3>
+            <button class="btn secondary" type="button" id="loadChartBtn">Load live graph</button>
+          </div>
+          <div id="chartBox">
+            <div id="chartPlaceholder">Click "Load live graph" to open the market chart. The form will work even if the chart is not loaded.</div>
+            <div id="tradingview-chart" style="display:none"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap split">
+        <div class="section-title">
+          <div class="eyebrow">Process</div>
+          <h2>How it works</h2>
+          <p>Registration is simple. No extra fields. No complicated process.</p>
+        </div>
+        <div class="card panel">
+          <div class="list">
+            <div class="item"><span class="check">✓</span><span>Submit your name, email, phone number, and investor profile.</span></div>
+            <div class="item"><span class="check">✓</span><span>Your details are sent directly to the Brain Trade Google Sheet.</span></div>
+            <div class="item"><span class="check">✓</span><span>One of our executives will reach out to you shortly.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="wrap">
+        <div class="section-title">
+          <div class="eyebrow">FAQ</div>
+          <h2>Common questions</h2>
+        </div>
+        <div class="faq">
+          <details open><summary>What happens after I register?</summary><p>Your information is received by Brain Trade and one of our executives will reach out to you shortly.</p></details>
+          <details><summary>Is this page affiliated with SpaceX?</summary><p>No. Brain Trade is independent and this page is not affiliated with, endorsed by, or sponsored by SpaceX.</p></details>
+          <details><summary>What information do I need to submit?</summary><p>The form only asks for your name, email, phone number, and investor profile level.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© 2026 Brain Trade. This page is for registration and learning enquiries. Brain Trade is independent and is not affiliated with, endorsed by, or sponsored by SpaceX.</div>
+  </footer>
+
+  <div class="popup" id="leadPopup" aria-hidden="true">
+    <div class="popup-card">
+      <button class="close" type="button" data-close-popup="leadPopup">×</button>
+      <div class="form-card" style="padding:0;box-shadow:none;border:0;background:transparent">
+        <h2>Register your interest</h2>
+        <p>Enter your contact details and our executive will reach out shortly.</p>
+        <form class="lead-form" data-form-source="Popup Registration Form">
+          <div class="field">
+            <label for="pop_name">Name</label>
+            <input id="pop_name" name="name" type="text" placeholder="Your name" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="pop_email">Email</label>
+            <input id="pop_email" name="email" type="email" placeholder="you@email.com" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="pop_phone">Phone</label>
+            <input id="pop_phone" name="phone" type="tel" placeholder="Your phone number" autocomplete="tel" required>
+          </div>
+          <p class="fine">Your contact information will be used by Brain Trade to contact you regarding your enquiry and registration.</p>
+          <div class="form-message">Thank you. Your information has been received.</div>
+          <button class="btn full" type="submit">Register</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup" id="thankPopup" aria-hidden="true">
+    <div class="popup-card thank-card">
+      <button class="close" type="button" data-close-popup="thankPopup">×</button>
+      <div class="thank-icon">✓</div>
+      <h2 style="margin:0 0 10px;font-size:28px;font-weight:500;letter-spacing:-.04em">Thank you for registering.</h2>
+      <p style="margin:0;color:#667085;line-height:1.6">Your information has been received. One of our executives will reach out to you shortly.</p>
+    </div>
+  </div>
+
+  <div class="mobile-bar"><a class="btn full" href="#register">Register</a></div>
+
+  <script>
+    const GOOGLE_SCRIPT_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwDQ0PBRzzRj6qR5Pn-Q6bjaoODCz3nxeKHX3Stnxp5Cz4YEF1ZybjfGtO7EY5nXuznVw/exec";
+    const CONSENT_TEXT = "Your contact information will be used by Brain Trade to contact you regarding your enquiry and registration.";
+
+    function openPopup(id){
+      const popup = document.getElementById(id);
+      if(popup){
+        popup.classList.add("open");
+        popup.setAttribute("aria-hidden","false");
+      }
+    }
+
+    function closePopup(id){
+      const popup = document.getElementById(id);
+      if(popup){
+        popup.classList.remove("open");
+        popup.setAttribute("aria-hidden","true");
+      }
+    }
+
+    document.querySelectorAll("[data-close-popup]").forEach(function(btn){
+      btn.addEventListener("click", function(){
+        closePopup(btn.getAttribute("data-close-popup"));
+      });
+    });
+
+    document.querySelectorAll(".popup").forEach(function(popup){
+      popup.addEventListener("click", function(e){
+        if(e.target === popup) closePopup(popup.id);
+      });
+    });
+
+    setTimeout(function(){
+      openPopup("leadPopup");
+    }, 900);
+
+    function getUtm(name){
+      return new URLSearchParams(window.location.search).get(name) || "";
+    }
+
+    function getValue(form, selectors){
+      for(const selector of selectors){
+        const field = form.querySelector(selector);
+        if(field && field.value !== undefined && String(field.value).trim() !== ""){
+          return String(field.value).trim();
+        }
+      }
+      return "";
+    }
+
+    function buildPayload(form){
+      const payload = new URLSearchParams();
+
+      const name = getValue(form, [
+        'input[name="name"]',
+        'input[autocomplete="name"]',
+        'input[type="text"]'
+      ]);
+
+      const email = getValue(form, [
+        'input[name="email"]',
+        'input[type="email"]'
+      ]);
+
+      const phone = getValue(form, [
+        'input[name="phone"]',
+        'input[type="tel"]'
+      ]);
+
+      const investorProfile = getValue(form, [
+        'select[name="investor_profile"]',
+        'select'
+      ]) || "Not provided";
+
+      payload.append("form_source", form.getAttribute("data-form-source") || "Website Form");
+      payload.append("name", name);
+      payload.append("email", email);
+      payload.append("phone", phone);
+      payload.append("investor_profile", investorProfile);
+
+      payload.append("page_name", "Brain Trade");
+      payload.append("page_url", window.location.href);
+
+      payload.append("utm_source", getUtm("utm_source"));
+      payload.append("utm_medium", getUtm("utm_medium"));
+      payload.append("utm_campaign", getUtm("utm_campaign"));
+      payload.append("utm_term", getUtm("utm_term"));
+      payload.append("utm_content", getUtm("utm_content"));
+
+      payload.append("consent_text", CONSENT_TEXT);
+      payload.append("user_agent", navigator.userAgent);
+
+      return payload;
+    }
+
+    function showMessage(form){
+      const msg = form.querySelector(".form-message");
+      if(msg){
+        msg.style.display = "block";
+      }
+
+      closePopup("leadPopup");
+      openPopup("thankPopup");
+    }
+
+    async function submitLead(form){
+      const button = form.querySelector('button[type="submit"],input[type="submit"]');
+      const oldText = button ? (button.textContent || button.value || "Register") : "Register";
+
+      const name = getValue(form, ['input[name="name"]','input[autocomplete="name"]','input[type="text"]']);
+      const email = getValue(form, ['input[name="email"]','input[type="email"]']);
+      const phone = getValue(form, ['input[name="phone"]','input[type="tel"]']);
+
+      if(!name || !email || !phone){
+        alert("Please enter your name, email, and phone number.");
+        return;
+      }
+
+      if(button){
+        button.disabled = true;
+        button.textContent = "Submitting...";
+      }
+
+      try{
+        await fetch(GOOGLE_SCRIPT_WEB_APP_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+          },
+          body: buildPayload(form).toString()
+        });
+
+        console.log("Brain Trade lead submitted:", form.getAttribute("data-form-source") || "Website Form");
+        showMessage(form);
+        form.reset();
+
+        const profile = form.querySelector('select[name="investor_profile"]');
+        if(profile){
+          profile.value = "Beginner";
+        }
+      }catch(error){
+        console.log("Lead submit error", error);
+        alert("There was a connection issue. Please try again.");
+      }finally{
+        if(button){
+          button.disabled = false;
+          button.textContent = oldText;
+        }
+      }
+    }
+
+    // This delegated submit listener handles both popup and hero forms.
+    // It is more reliable than attaching listeners one by one.
+    document.addEventListener("submit", function(e){
+      const form = e.target;
+
+      if(!form || !form.classList || !form.classList.contains("lead-form")){
+        return;
+      }
+
+      e.preventDefault();
+      e.stopPropagation();
+
+      submitLead(form);
+    }, true);
+
+    function loadTradingView(){
+      const placeholder = document.getElementById("chartPlaceholder");
+      const chart = document.getElementById("tradingview-chart");
+      const btn = document.getElementById("loadChartBtn");
+
+      if(!chart) return;
+
+      if(btn) btn.textContent = "Loading...";
+      if(placeholder) placeholder.style.display = "none";
+
+      chart.style.display = "block";
+
+      if(window.TradingView){
+        createTradingViewWidget();
+        return;
+      }
+
+      const script = document.createElement("script");
+      script.src = "https://s3.tradingview.com/tv.js";
+      script.async = true;
+      script.onload = createTradingViewWidget;
+      script.onerror = function(){
+        if(btn) btn.textContent = "Try again";
+        if(placeholder){
+          placeholder.style.display = "block";
+          placeholder.textContent = "The chart could not load here. The registration form still works.";
+        }
+        chart.style.display = "none";
+      };
+
+      document.body.appendChild(script);
+    }
+
+    function createTradingViewWidget(){
+      const btn = document.getElementById("loadChartBtn");
+      if(btn) btn.textContent = "Live graph loaded";
+
+      if(!window.TradingView) return;
+
+      new TradingView.widget({
+        autosize: true,
+        symbol: "NASDAQ:SPCX",
+        interval: "D",
+        timezone: "Etc/UTC",
+        theme: "light",
+        style: "1",
+        locale: "en",
+        toolbar_bg: "#ffffff",
+        enable_publishing: false,
+        allow_symbol_change: true,
+        container_id: "tradingview-chart"
+      });
+    }
+
+    const loadChartBtn = document.getElementById("loadChartBtn");
+    if(loadChartBtn){
+      loadChartBtn.addEventListener("click", loadTradingView);
+    }
+  </script>
+</body>
+</html>
+
+
+
