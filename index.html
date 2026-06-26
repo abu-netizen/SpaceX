@@ -1,11 +1,10 @@
 <!doctype html>
-
-<html lang="sv-SE">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Brain Trade Sverige</title>
-  <meta name="description" content="Brain Trade registreringssida för marknadsutbildning, SpaceX-relaterade teman och personlig uppföljning.">
+  <title>Brain Trade</title>
+  <meta name="description" content="Brain Trade registration page for SpaceX market learning and executive follow-up.">
 
   <style>
     :root{
@@ -14,11 +13,10 @@
       --ink:#101828;
       --muted:#667085;
       --line:#e6ebf3;
-      --blue:#006AA7;
-      --blue2:#00558a;
-      --yellow:#FECC02;
-      --green:#FECC02;
-      --soft-blue:#eef7fc;
+      --blue:#175cff;
+      --blue2:#0b45d9;
+      --green:#13b981;
+      --soft-blue:#edf4ff;
       --shadow:0 24px 70px rgba(16,24,40,.12);
       --radius:28px;
     }
@@ -31,8 +29,8 @@
       color:var(--ink);
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Arial,sans-serif;
       background:
-        radial-gradient(circle at 15% 8%,rgba(0,106,167,.16),transparent 28%),
-        radial-gradient(circle at 88% 18%,rgba(254,204,2,.18),transparent 32%),
+        radial-gradient(circle at 15% 8%,rgba(23,92,255,.14),transparent 28%),
+        radial-gradient(circle at 88% 18%,rgba(19,185,129,.13),transparent 32%),
         linear-gradient(180deg,#ffffff 0%,var(--bg) 38%,#ffffff 100%);
       overflow-x:hidden;
     }
@@ -44,8 +42,8 @@
       pointer-events:none;
       z-index:-1;
       background:
-        linear-gradient(110deg,transparent 0 16%,rgba(0,106,167,.08) 16.2% 16.4%,transparent 16.6% 100%),
-        linear-gradient(152deg,transparent 0 63%,rgba(254,204,2,.12) 63.1% 63.3%,transparent 63.5% 100%);
+        linear-gradient(110deg,transparent 0 16%,rgba(23,92,255,.06) 16.2% 16.4%,transparent 16.6% 100%),
+        linear-gradient(152deg,transparent 0 63%,rgba(19,185,129,.08) 63.1% 63.3%,transparent 63.5% 100%);
     }
 
     a{color:inherit;text-decoration:none}
@@ -59,7 +57,7 @@
       position:sticky;
       top:0;
       z-index:50;
-      background:rgba(255,255,255,.84);
+      background:rgba(255,255,255,.82);
       backdrop-filter:blur(18px);
       border-bottom:1px solid rgba(230,235,243,.85);
     }
@@ -85,9 +83,9 @@
       width:38px;
       height:38px;
       border-radius:14px;
-      background:linear-gradient(135deg,var(--blue) 0 58%,var(--yellow) 58% 100%);
+      background:linear-gradient(135deg,var(--blue),var(--green));
       position:relative;
-      box-shadow:0 12px 28px rgba(0,106,167,.22);
+      box-shadow:0 12px 28px rgba(23,92,255,.18);
     }
 
     .brand-mark:after{
@@ -130,7 +128,7 @@
       color:#fff;
       font-size:15px;
       font-weight:600;
-      box-shadow:0 16px 36px rgba(0,106,167,.24);
+      box-shadow:0 16px 36px rgba(23,92,255,.24);
       transition:.2s ease;
     }
 
@@ -177,8 +175,8 @@
       width:8px;
       height:8px;
       border-radius:999px;
-      background:var(--yellow);
-      box-shadow:0 0 0 7px rgba(254,204,2,.18);
+      background:var(--green);
+      box-shadow:0 0 0 7px rgba(19,185,129,.12);
     }
 
     h1{
@@ -236,7 +234,7 @@
     }
 
     .card{
-      background:rgba(255,255,255,.94);
+      background:rgba(255,255,255,.92);
       border:1px solid var(--line);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
@@ -293,7 +291,13 @@
 
     input:focus,select:focus{
       border-color:var(--blue);
-      box-shadow:0 0 0 4px rgba(0,106,167,.10);
+      box-shadow:0 0 0 4px rgba(23,92,255,.09);
+    }
+
+    .phone-row{
+      display:grid;
+      grid-template-columns:135px 1fr;
+      gap:10px;
     }
 
     .fine{
@@ -307,8 +311,8 @@
       display:none;
       padding:12px 14px;
       border-radius:14px;
-      background:#fff8d7;
-      color:#775b00;
+      background:#ecfdf5;
+      color:#067647;
       font-size:14px;
     }
 
@@ -416,8 +420,8 @@
       width:22px;
       height:22px;
       border-radius:999px;
-      background:#fff8d7;
-      color:#775b00;
+      background:#e8fbf4;
+      color:#079455;
       display:flex;
       align-items:center;
       justify-content:center;
@@ -449,7 +453,7 @@
       height:430px;
       border:1px solid var(--line);
       border-radius:22px;
-      background:linear-gradient(135deg,#f8fbff,#eef7fc);
+      background:linear-gradient(135deg,#f8fbff,#edf4ff);
       display:flex;
       align-items:center;
       justify-content:center;
@@ -546,7 +550,7 @@
       width:58px;
       height:58px;
       border-radius:22px;
-      background:linear-gradient(135deg,var(--blue),var(--yellow));
+      background:linear-gradient(135deg,var(--blue),var(--green));
       margin:0 auto 18px;
       display:flex;
       align-items:center;
@@ -577,52 +581,35 @@
       #chartBox{height:360px}
       h1{font-size:44px}
     }
+
+    @media(max-width:520px){
+      .phone-row{
+        grid-template-columns:1fr;
+      }
+    }
   </style>
-
-
-
-  <!-- Meta Pixel Code -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1012064848201482');
-  fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1012064848201482&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
-
 </head>
 
 <body>
+  <iframe name="leadNativeFrame" id="leadNativeFrame" style="display:none;width:0;height:0;border:0"></iframe>
   <nav class="nav">
     <div class="wrap nav-inner">
       <a class="brand" href="#top">
         <span class="brand-mark"></span>
-        <span>Brain Trade Sverige</span>
+        <span>Brain Trade</span>
       </a>
 
-```
-  <div class="links">
-    <a href="#learning">Lär dig mer</a>
-    <a href="#live-graph">Livegraf</a>
-    <a href="#faq">Frågor</a>
-    <a href="#register">Registrera dig</a>
-  </div>
+      <div class="links">
+        <a href="#learning">Learning</a>
+        <a href="#live-graph">Live Graph</a>
+        <a href="#faq">FAQ</a>
+        <a href="#register">Register</a>
+      </div>
 
-  <div class="nav-cta">
-    <a class="btn" href="#register">Registrera dig</a>
-  </div>
-</div>
-```
-
+      <div class="nav-cta">
+        <a class="btn" href="#register">Register</a>
+      </div>
+    </div>
   </nav>
 
   <main id="top">
@@ -631,219 +618,194 @@
         <div>
           <div class="badge">
             <span class="dot"></span>
-            Marknadsutbildning och registrering för Sverige
+            SpaceX market learning and registration
           </div>
 
-```
-      <h1>
-        Registrera ditt intresse för
-        <span class="blue-text">SpaceX-relaterade marknadsmöjligheter.</span>
-      </h1>
+          <h1>Register your interest in <span class="blue-text">SpaceX market opportunities.</span></h1>
 
-      <p class="lead">
-        Brain Trade erbjuder en tydlig och trygg introduktion för personer i Sverige
-        som vill lära sig mer om SpaceX-relaterade marknadsuppdateringar,
-        investeringsteman och personlig uppföljning.
-      </p>
+          <p class="lead">
+            Brain Trade provides a clear learning experience for people interested in SpaceX-related market updates,
+            investment themes, and a direct executive follow-up.
+          </p>
 
-      <div class="hero-actions">
-        <a class="btn" href="#register">Registrera dig</a>
-        <a class="btn secondary" href="#learning">Börja lära dig</a>
-      </div>
+          <div class="hero-actions">
+            <a class="btn" href="#register">Register</a>
+            <a class="btn secondary" href="#learning">Start Learning</a>
+          </div>
 
-      <div class="stats">
-        <div class="stat">
-          <b>Enkelt</b>
-          <span>Registrera dig med namn, e-post och telefonnummer.</span>
+          <div class="stats">
+            <div class="stat">
+              <b>Simple</b>
+              <span>Register with name, email, and phone.</span>
+            </div>
+
+            <div class="stat">
+              <b>Clear</b>
+              <span>Learn before making any decision.</span>
+            </div>
+
+            <div class="stat">
+              <b>Fast</b>
+              <span>An executive will reach out shortly.</span>
+            </div>
+          </div>
         </div>
 
-        <div class="stat">
-          <b>Tydligt</b>
-          <span>Lär dig mer innan du tar nästa steg.</span>
-        </div>
+        <div class="card form-card" id="register">
+          <h2>Register with Brain Trade</h2>
+          <p>Complete the form below and our executive will contact you shortly.</p>
 
-        <div class="stat">
-          <b>Snabbt</b>
-          <span>En rådgivare kontaktar dig inom kort.</span>
-        </div>
-      </div>
-    </div>
+          <form class="lead-form" data-form-source="Main Registration Form">
+            <div class="field">
+              <label for="main_name">Name</label>
+              <input id="main_name" name="name" type="text" placeholder="Your name" autocomplete="name" required>
+            </div>
 
-    <div class="card form-card" id="register">
-      <h2>Registrera dig hos Brain Trade</h2>
-      <p>Fyll i formuläret nedan så kontaktar en av våra rådgivare dig inom kort.</p>
+            <div class="field">
+              <label for="main_email">Email</label>
+              <input id="main_email" name="email" type="email" placeholder="you@email.com" autocomplete="email" required>
+            </div>
 
-      <form class="lead-form" data-form-source="Main Registration Form">
-        <div class="field">
-          <label for="main_name">Namn</label>
-          <input id="main_name" name="name" type="text" placeholder="Ditt namn" autocomplete="name" required>
-        </div>
+            <div class="field">
+              <label>Phone</label>
+              <div class="phone-row">
+                <select name="mobile_code" required>
+                  <option value="1" selected>+1 Canada/US</option>
+                </select>
 
-        <div class="field">
-          <label for="main_email">E-post</label>
-          <input id="main_email" name="email" type="email" placeholder="du@email.com" autocomplete="email" required>
-        </div>
+                <input name="phone" type="tel" placeholder="10-digit phone number" autocomplete="tel" inputmode="numeric" maxlength="10" pattern="[0-9]{10}" required>
+              </div>
+            </div>
 
-        <div class="field">
-          <label for="main_phone">Telefonnummer</label>
-          <input id="main_phone" name="phone" type="tel" value="+46 " placeholder="+46 70 123 45 67" autocomplete="tel" required>
-        </div>
+            <div class="field">
+              <label for="main_profile">Investor Profile</label>
+              <select id="main_profile" name="investor_profile">
+                <option value="Beginner" selected>Beginner</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Advanced">Advanced</option>
+              </select>
+            </div>
 
-        <div class="field">
-          <label for="main_profile">Investerarprofil</label>
-          <select id="main_profile" name="investor_profile">
-            <option value="Beginner" selected>Nybörjare</option>
-            <option value="Intermediate">Medelnivå</option>
-            <option value="Advanced">Avancerad</option>
-          </select>
-        </div>
+            <p class="fine">
+              Your contact information will be used by Brain Trade to contact you regarding your enquiry and registration.
+            </p>
 
-        <p class="fine">
-          Dina kontaktuppgifter används av Brain Trade för att kontakta dig angående
-          din förfrågan och registrering.
-        </p>
+            <div class="form-message">Thank you. Your information has been received.</div>
 
-        <div class="form-message">Tack. Dina uppgifter har tagits emot.</div>
-
-        <button class="btn full" type="submit">Registrera dig</button>
-      </form>
-    </div>
-  </div>
-</header>
-
-<section class="section" id="learning">
-  <div class="wrap">
-    <div class="section-title">
-      <div class="eyebrow">Lär dig mer</div>
-      <h2>En tydlig utbildningsväg för SpaceX-relaterat marknadsintresse.</h2>
-      <p>
-        Förstå temat, följ marknadsuppdateringar och prata med Brain Trade
-        innan du tar nästa steg.
-      </p>
-    </div>
-
-    <div class="grid3">
-      <div class="card feature">
-        <div class="icon">01</div>
-        <h3>Marknadsöversikt</h3>
-        <p>
-          Få en tydlig bild av den SpaceX-relaterade marknadsdiskussionen
-          och varför investerare följer temat.
-        </p>
-      </div>
-
-      <div class="card feature">
-        <div class="icon">02</div>
-        <h3>Riskmedvetenhet</h3>
-        <p>
-          Gå igenom viktiga riskpunkter och undvik beslut som enbart bygger
-          på hype eller kortsiktiga trender.
-        </p>
-      </div>
-
-      <div class="card feature">
-        <div class="icon">03</div>
-        <h3>Personlig uppföljning</h3>
-        <p>
-          Efter registrering kontaktar en av våra rådgivare dig för att
-          diskutera din förfrågan.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="live-graph">
-  <div class="wrap">
-    <div class="card graph-card">
-      <div class="graph-head">
-        <h3>SpaceX marknadsgraf</h3>
-        <button class="btn secondary" type="button" id="loadChartBtn">Ladda livegraf</button>
-      </div>
-
-      <div id="chartBox">
-        <div id="chartPlaceholder">
-          Klicka på “Ladda livegraf” för att öppna marknadsgrafen.
-          Formuläret fungerar även om grafen inte laddas.
-        </div>
-        <div id="tradingview-chart" style="display:none"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap split">
-    <div class="section-title">
-      <div class="eyebrow">Process</div>
-      <h2>Så fungerar det</h2>
-      <p>Registreringen är enkel. Inga onödiga steg. Inga komplicerade fält.</p>
-    </div>
-
-    <div class="card panel">
-      <div class="list">
-        <div class="item">
-          <span class="check">✓</span>
-          <span>Skicka in ditt namn, din e-postadress, ditt telefonnummer och din investerarprofil.</span>
-        </div>
-
-        <div class="item">
-          <span class="check">✓</span>
-          <span>Dina uppgifter skickas direkt till Brain Trades registreringssystem.</span>
-        </div>
-
-        <div class="item">
-          <span class="check">✓</span>
-          <span>En av våra rådgivare kontaktar dig inom kort.</span>
+            <button class="btn full" type="submit">Register</button>
+          </form>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </header>
 
-<section class="section" id="faq">
-  <div class="wrap">
-    <div class="section-title">
-      <div class="eyebrow">FAQ</div>
-      <h2>Vanliga frågor</h2>
-    </div>
+    <section class="section" id="learning">
+      <div class="wrap">
+        <div class="section-title">
+          <div class="eyebrow">Learning</div>
+          <h2>A premium learning path for SpaceX market interest.</h2>
+          <p>Understand the theme, follow market updates, and speak with Brain Trade before taking your next step.</p>
+        </div>
 
-    <div class="faq">
-      <details open>
-        <summary>Vad händer efter att jag registrerar mig?</summary>
-        <p>
-          Dina uppgifter tas emot av Brain Trade och en av våra rådgivare
-          kontaktar dig inom kort.
-        </p>
-      </details>
+        <div class="grid3">
+          <div class="card feature">
+            <div class="icon">01</div>
+            <h3>Market overview</h3>
+            <p>Get a clear view of the SpaceX-related market conversation and why investors are paying attention.</p>
+          </div>
 
-      <details>
-        <summary>Är den här sidan kopplad till SpaceX?</summary>
-        <p>
-          Nej. Brain Trade är oberoende och den här sidan är inte ansluten till,
-          godkänd av eller sponsrad av SpaceX.
-        </p>
-      </details>
+          <div class="card feature">
+            <div class="icon">02</div>
+            <h3>Risk awareness</h3>
+            <p>Review important risk points and avoid hype-driven decisions before moving ahead.</p>
+          </div>
 
-      <details>
-        <summary>Vilka uppgifter behöver jag lämna?</summary>
-        <p>
-          Formuläret ber endast om ditt namn, din e-postadress, ditt telefonnummer
-          och din investerarprofil.
-        </p>
-      </details>
-    </div>
-  </div>
-</section>
-```
+          <div class="card feature">
+            <div class="icon">03</div>
+            <h3>Executive follow-up</h3>
+            <p>After registration, one of our executives will contact you to discuss your enquiry.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <section class="section" id="live-graph">
+      <div class="wrap">
+        <div class="card graph-card">
+          <div class="graph-head">
+            <h3>SpaceX Market Graph</h3>
+            <button class="btn secondary" type="button" id="loadChartBtn">Load live graph</button>
+          </div>
+
+          <div id="chartBox">
+            <div id="chartPlaceholder">
+              Click "Load live graph" to open the market chart. The form will work even if the chart is not loaded.
+            </div>
+
+            <div id="tradingview-chart" style="display:none"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap split">
+        <div class="section-title">
+          <div class="eyebrow">Process</div>
+          <h2>How it works</h2>
+          <p>Registration is simple. No extra fields. No complicated process.</p>
+        </div>
+
+        <div class="card panel">
+          <div class="list">
+            <div class="item">
+              <span class="check">✓</span>
+              <span>Submit your name, email, mobile code, phone number, and investor profile.</span>
+            </div>
+
+            <div class="item">
+              <span class="check">✓</span>
+              <span>Your details are sent directly to the Brain Trade Google Sheet.</span>
+            </div>
+
+            <div class="item">
+              <span class="check">✓</span>
+              <span>One of our executives will reach out to you shortly.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="wrap">
+        <div class="section-title">
+          <div class="eyebrow">FAQ</div>
+          <h2>Common questions</h2>
+        </div>
+
+        <div class="faq">
+          <details open>
+            <summary>What happens after I register?</summary>
+            <p>Your information is received by Brain Trade and one of our executives will reach out to you shortly.</p>
+          </details>
+
+          <details>
+            <summary>Is this page affiliated with SpaceX?</summary>
+            <p>No. Brain Trade is independent and this page is not affiliated with, endorsed by, or sponsored by SpaceX.</p>
+          </details>
+
+          <details>
+            <summary>What information do I need to submit?</summary>
+            <p>The form asks for your name, email, mobile code, phone number, and investor profile level.</p>
+          </details>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
     <div class="wrap">
-      © 2026 Brain Trade Sverige. Den här sidan är avsedd för registrering och
-      utbildningsförfrågningar. Brain Trade är oberoende och är inte anslutet till,
-      godkänt av eller sponsrat av SpaceX.
+      © 2026 Brain Trade. This page is for registration and learning enquiries. Brain Trade is independent and is not affiliated with, endorsed by, or sponsored by SpaceX.
     </div>
   </footer>
 
@@ -851,40 +813,42 @@
     <div class="popup-card">
       <button class="close" type="button" data-close-popup="leadPopup">×</button>
 
-```
-  <div class="form-card" style="padding:0;box-shadow:none;border:0;background:transparent">
-    <h2>Registrera ditt intresse</h2>
-    <p>Ange dina kontaktuppgifter så kontaktar en av våra rådgivare dig inom kort.</p>
+      <div class="form-card" style="padding:0;box-shadow:none;border:0;background:transparent">
+        <h2>Register your interest</h2>
+        <p>Enter your contact details and our executive will reach out shortly.</p>
 
-    <form class="lead-form" data-form-source="Popup Registration Form">
-      <div class="field">
-        <label for="pop_name">Namn</label>
-        <input id="pop_name" name="name" type="text" placeholder="Ditt namn" autocomplete="name" required>
+        <form class="lead-form" data-form-source="Popup Registration Form">
+          <div class="field">
+            <label for="pop_name">Name</label>
+            <input id="pop_name" name="name" type="text" placeholder="Your name" autocomplete="name" required>
+          </div>
+
+          <div class="field">
+            <label for="pop_email">Email</label>
+            <input id="pop_email" name="email" type="email" placeholder="you@email.com" autocomplete="email" required>
+          </div>
+
+          <div class="field">
+            <label>Phone</label>
+            <div class="phone-row">
+              <select name="mobile_code" required>
+                <option value="1" selected>+1 Canada/US</option>
+              </select>
+
+              <input name="phone" type="tel" placeholder="10-digit phone number" autocomplete="tel" inputmode="numeric" maxlength="10" pattern="[0-9]{10}" required>
+            </div>
+          </div>
+
+          <p class="fine">
+            Your contact information will be used by Brain Trade to contact you regarding your enquiry and registration.
+          </p>
+
+          <div class="form-message">Thank you. Your information has been received.</div>
+
+          <button class="btn full" type="submit">Register</button>
+        </form>
       </div>
-
-      <div class="field">
-        <label for="pop_email">E-post</label>
-        <input id="pop_email" name="email" type="email" placeholder="du@email.com" autocomplete="email" required>
-      </div>
-
-      <div class="field">
-        <label for="pop_phone">Telefonnummer</label>
-        <input id="pop_phone" name="phone" type="tel" value="+46 " placeholder="+46 70 123 45 67" autocomplete="tel" required>
-      </div>
-
-      <p class="fine">
-        Dina kontaktuppgifter används av Brain Trade för att kontakta dig
-        angående din förfrågan och registrering.
-      </p>
-
-      <div class="form-message">Tack. Dina uppgifter har tagits emot.</div>
-
-      <button class="btn full" type="submit">Registrera dig</button>
-    </form>
-  </div>
-</div>
-```
-
+    </div>
   </div>
 
   <div class="popup" id="thankPopup" aria-hidden="true">
@@ -892,27 +856,25 @@
       <button class="close" type="button" data-close-popup="thankPopup">×</button>
       <div class="thank-icon">✓</div>
 
-```
-  <h2 style="margin:0 0 10px;font-size:28px;font-weight:500;letter-spacing:-.04em">
-    Tack för din registrering.
-  </h2>
+      <h2 style="margin:0 0 10px;font-size:28px;font-weight:500;letter-spacing:-.04em">
+        Thank you for registering.
+      </h2>
 
-  <p style="margin:0;color:#667085;line-height:1.6">
-    Dina uppgifter har tagits emot. En av våra rådgivare kontaktar dig inom kort.
-  </p>
-</div>
-```
-
+      <p style="margin:0;color:#667085;line-height:1.6">
+        Your information has been received. One of our executives will reach out to you shortly.
+      </p>
+    </div>
   </div>
 
   <div class="mobile-bar">
-    <a class="btn full" href="#register">Registrera dig</a>
+    <a class="btn full" href="#register">Register</a>
   </div>
 
   <script>
-    const GOOGLE_SCRIPT_WEB_APP_URL = "https://script.google.com/macros/s/AKfycby6_QBFGli4cF3k1ZebSI7RdP6or2KKhmSYk1xGINdbam4w_AEThB0q-ec2Yl0fQnaT/exec";
-    // If you create a new Apps Script deployment, replace the URL above with the new /exec Web App URL.
-    const CONSENT_TEXT = "Dina kontaktuppgifter används av Brain Trade för att kontakta dig angående din förfrågan och registrering.";
+    const GOOGLE_SCRIPT_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwc6WNKIqvCsLFwrUz-ZH5urkjpBD1w9F9M_OURxv0OamSRiCllWDLuu3HlA0Otl5La4A/exec";
+    const TARGET_SHEET_NAME = "Leads";
+    const DEFAULT_COUNTRY = "Canada";
+    const CONSENT_TEXT = "Your contact information will be used by Brain Trade to contact you regarding your enquiry and registration.";
 
     function openPopup(id){
       const popup = document.getElementById(id);
@@ -966,7 +928,11 @@
       return "";
     }
 
-    function buildPayload(form, metaEventId){
+    function onlyDigits(value){
+      return String(value || "").replace(/\D/g, "");
+    }
+
+    function buildPayload(form){
       const payload = new URLSearchParams();
 
       const name = getValue(form, [
@@ -980,23 +946,31 @@
         'input[type="email"]'
       ]);
 
-      const phone = getValue(form, [
+      const phoneDigits = onlyDigits(getValue(form, [
         'input[name="phone"]',
         'input[type="tel"]'
-      ]);
+      ]));
+
+      const mobileCodeDigits = onlyDigits(getValue(form, [
+        'select[name="mobile_code"]'
+      ])) || "1";
 
       const investorProfile = getValue(form, [
-        'select[name="investor_profile"]',
-        'select'
-      ]) || "Ej angivet";
+        'select[name="investor_profile"]'
+      ]) || "Not provided";
 
       payload.append("form_source", form.getAttribute("data-form-source") || "Website Form");
       payload.append("name", name);
       payload.append("email", email);
-      payload.append("phone", phone);
+
+      payload.append("phone", phoneDigits);
+      payload.append("mobile_code", mobileCodeDigits);
+
+      payload.append("country", DEFAULT_COUNTRY);
+      payload.append("sheet_name", TARGET_SHEET_NAME);
       payload.append("investor_profile", investorProfile);
 
-      payload.append("page_name", "Brain Trade Sverige");
+      payload.append("page_name", "Brain Trade");
       payload.append("page_url", window.location.href);
 
       payload.append("utm_source", getUtm("utm_source"));
@@ -1007,13 +981,11 @@
 
       payload.append("consent_text", CONSENT_TEXT);
       payload.append("user_agent", navigator.userAgent);
-      payload.append("meta_event_id", metaEventId);
-      payload.append("meta_test_event_code", "TEST74452");
 
       return payload;
     }
 
-    function showMessage(form, metaEventId){
+    function showMessage(form){
       const msg = form.querySelector(".form-message");
 
       if(msg){
@@ -1022,18 +994,59 @@
 
       closePopup("leadPopup");
       openPopup("thankPopup");
+    }
 
-      if(typeof fbq === "function"){
-        fbq("track", "CompleteRegistration", {}, {
-          eventID: metaEventId
-        });
-      }
+    function postToGoogleScript(payload){
+      return new Promise(function(resolve, reject){
+        if(!GOOGLE_SCRIPT_WEB_APP_URL || GOOGLE_SCRIPT_WEB_APP_URL.indexOf("PASTE_YOUR_NEW") !== -1){
+          reject(new Error("Apps Script Web App URL is missing."));
+          return;
+        }
+
+        payload.append("submit_method", "native_iframe_get");
+        payload.append("cache_bust", Date.now().toString());
+
+        const submitUrl = GOOGLE_SCRIPT_WEB_APP_URL + "?" + payload.toString();
+
+        console.log("Brain Trade submitting lead to:", submitUrl);
+
+        let frame = document.getElementById("leadNativeFrame");
+
+        if(!frame){
+          frame = document.createElement("iframe");
+          frame.name = "leadNativeFrame";
+          frame.id = "leadNativeFrame";
+          frame.style.display = "none";
+          frame.style.width = "0";
+          frame.style.height = "0";
+          frame.style.border = "0";
+          document.body.appendChild(frame);
+        }
+
+        let finished = false;
+
+        const done = function(){
+          if(finished){
+            return;
+          }
+
+          finished = true;
+          resolve();
+        };
+
+        frame.onload = function(){
+          setTimeout(done, 1200);
+        };
+
+        frame.src = submitUrl;
+
+        setTimeout(done, 4200);
+      });
     }
 
     async function submitLead(form){
       const button = form.querySelector('button[type="submit"],input[type="submit"]');
-      const oldText = button ? (button.textContent || button.value || "Registrera dig") : "Registrera dig";
-      const metaEventId = "lead_" + Date.now() + "_" + Math.floor(Math.random() * 1000000);
+      const oldText = button ? (button.textContent || button.value || "Register") : "Register";
 
       const name = getValue(form, [
         'input[name="name"]',
@@ -1046,48 +1059,55 @@
         'input[type="email"]'
       ]);
 
-      const phone = getValue(form, [
+      const phoneDigits = onlyDigits(getValue(form, [
         'input[name="phone"]',
         'input[type="tel"]'
-      ]);
+      ]));
 
-      if(!name || !email || !phone){
-        alert("Ange ditt namn, din e-postadress och ditt telefonnummer.");
+      const mobileCodeDigits = onlyDigits(getValue(form, [
+        'select[name="mobile_code"]'
+      ])) || "1";
+
+      if(!name || !email || !phoneDigits || !mobileCodeDigits){
+        alert("Please enter your name, email, mobile code, and phone number.");
+        return;
+      }
+
+      if(phoneDigits.length !== 10){
+        alert("Please enter a valid 10-digit Canada/US phone number.");
         return;
       }
 
       if(button){
         button.disabled = true;
-        button.textContent = "Skickar...";
+        button.textContent = "Submitting...";
       }
 
       try{
-        await fetch(GOOGLE_SCRIPT_WEB_APP_URL, {
-          method: "POST",
-          mode: "no-cors",
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
-          },
-          body: buildPayload(form, metaEventId).toString()
-        });
+        const payload = buildPayload(form);
+
+        await postToGoogleScript(payload);
 
         console.log("Brain Trade lead submitted:", form.getAttribute("data-form-source") || "Website Form");
 
-        showMessage(form, metaEventId);
+        showMessage(form);
         form.reset();
 
-        const phoneField = form.querySelector('input[name="phone"]');
-        if(phoneField){
-          phoneField.value = "+46 ";
-        }
-
         const profile = form.querySelector('select[name="investor_profile"]');
+
         if(profile){
           profile.value = "Beginner";
         }
+
+        const code = form.querySelector('select[name="mobile_code"]');
+
+        if(code){
+          code.value = "1";
+        }
+
       }catch(error){
         console.log("Lead submit error", error);
-        alert("Det uppstod ett anslutningsproblem. Försök igen.");
+        alert("There was a connection issue. Please try again.");
       }finally{
         if(button){
           button.disabled = false;
@@ -1119,7 +1139,7 @@
       }
 
       if(btn){
-        btn.textContent = "Laddar...";
+        btn.textContent = "Loading...";
       }
 
       if(placeholder){
@@ -1140,12 +1160,12 @@
 
       script.onerror = function(){
         if(btn){
-          btn.textContent = "Försök igen";
+          btn.textContent = "Try again";
         }
 
         if(placeholder){
           placeholder.style.display = "block";
-          placeholder.textContent = "Grafen kunde inte laddas här. Registreringsformuläret fungerar fortfarande.";
+          placeholder.textContent = "The chart could not load here. The registration form still works.";
         }
 
         chart.style.display = "none";
@@ -1158,7 +1178,7 @@
       const btn = document.getElementById("loadChartBtn");
 
       if(btn){
-        btn.textContent = "Livegraf laddad";
+        btn.textContent = "Live graph loaded";
       }
 
       if(!window.TradingView){
@@ -1169,10 +1189,10 @@
         autosize: true,
         symbol: "NASDAQ:SPCX",
         interval: "D",
-        timezone: "Europe/Stockholm",
+        timezone: "Etc/UTC",
         theme: "light",
         style: "1",
-        locale: "sv_SE",
+        locale: "en",
         toolbar_bg: "#ffffff",
         enable_publishing: false,
         allow_symbol_change: true,
@@ -1186,6 +1206,5 @@
       loadChartBtn.addEventListener("click", loadTradingView);
     }
   </script>
-
 </body>
 </html>
